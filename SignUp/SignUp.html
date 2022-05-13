@@ -50,8 +50,7 @@
                             <label for="message" class="label flex p-1 pt-2">Full Name</label>
                             <input type="text" placeholder="fullname" id="nameInp"
                                 class="form-control mb-1 p-2 w-full border-2 rounded-2xl flex flex-col items-center justify-center">
-                            <!-- <textarea name="message" class="input" type="password" placeholder="fullname"
-                                rows="1"></textarea> -->
+                         
                         </div>
                         <div class="m-1">
                             <label for="message" class="label flex p-1 pt-2">Email</label>
@@ -78,7 +77,6 @@
                     </div>
                     <div>
                         <div>
-                            <!-- <p class="body1 my-4 text-center"> -->
                             <a href="/LogIn/LogIn.html" class="text-blue-600 lead1 float-right">
                                 Already have an account?
                             </a>
@@ -91,48 +89,18 @@
     </section>
 
 
-    <!-- <section>
-        <div class="container">
-            <h2>Wel-come to G-Medicine</h2>
-            <div class="header">
-                <h2>Sign Up</h2>
-            </div>
-            <form class="form" id="form">
-                <div class="form-control">
-                    <input tpe="text" name="" id="name" placeholder="Full name" autocomplete="off">
-                </div>
-                <div class="form-control">
-                    <input type="email" name="" id="email" placeholder="Emaill Address" autocomplete="off">
-                </div>
-                <div class="form-control">
-                    <input type="text" name="" id="phone" placeholder="Phone Number" autocomplete="off">
-                </div>
-                <div class="form-control">
-                    <input type="password" name="" id="password" placeholder="Password" autocomplete="off">
-                </div>
-                <div class="form-control">
-                    <input type="password" name="" id="cpassword" placeholder="Confirm Password" autocomplete="off">
-                </div>
-                <input type="submit" value="Sign Up" class="btn" name="">
-                <div class="ant-acc">
-                    <h5>Already have account? <a href="/LogIn/LogIn.html">Log In</a></h5>
-                </div>
-            </form>
-        </div>
-    </section> -->
-
+ 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
 
         const firebaseConfig = {
-            apiKey: "AIzaSyCSQ5OS22tpkM8jf32jeIR0gHCViB1BAGo",
-            authDomain: "g-medicineplus.firebaseapp.com",
-            databaseURL: "https://g-medicineplus-default-rtdb.firebaseio.com",
-            projectId: "g-medicineplus",
-            storageBucket: "g-medicineplus.appspot.com",
-            messagingSenderId: "965037327300",
-            appId: "1:965037327300:web:f2734d497afb733f1f9a91",
-            measurementId: "G-SZ5NYMM0G9"
+  apiKey: "AIzaSyBxH5bVBjgGtUAPVMXLeIk1m34SDf8vD0g",
+  authDomain: "g-medicine-a5ad1.firebaseapp.com",
+  projectId: "g-medicine-a5ad1",
+  storageBucket: "g-medicine-a5ad1.appspot.com",
+  messagingSenderId: "31809733139",
+  appId: "1:31809733139:web:d21ec0503cc3445407f5e6",
+  measurementId: "G-Z9B7E8WBQR"
         };
 
 
@@ -155,51 +123,68 @@
         //-----------------------------------VALIDATION-----------------------------------//
 
         function isEmptyOrSpaces(str) {
+            console.log(1);
             return str === null || str.match(/^ *$/) !== null;
         }
-
+        console.log(2);
+        
         function Validation() {
+            console.log(3.1);
             let nameregex = /^[a-zA-Z\s]+$/;
+            console.log(3.2);
             let emailregex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+            console.log(3.3);
             let userregex = /^[a-zA-Z0-9]{5,}$/;
+            console.log(3.4);
             let passregex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,}$/;
-
-            if (isEmptyOrSpaces(name.value) || isEmptyOrSpaces(email.value) || isEmptyOrSpaces(username.value) || isEmptyOrSpaces(pass.value)) {
-                alert("you cannot left any field empty");
-                return false;
-            }
-
+            console.log(3.5 );
+            
+            // if (isEmptyOrSpaces(name.value) || isEmptyOrSpaces(email.value) || isEmptyOrSpaces(username.value) || isEmptyOrSpaces(pass.value)) {
+            //     console.log(4);
+            //     alert("you cannot left any field empty");
+            //     return false;
+            // }
+            
             if (!nameregex.test(name.value)) {
+                console.log(5);
                 alert("the name should only contain alphabets!");
                 return false;
             }
-
+            
             if (!emailregex.test(email.value)) {
+                console.log(6);
                 alert("Enter a Valid Email");
                 return false;
             }
-
+            
             if (!userregex.test(username.value)) {
+                console.log(7);
                 alert("-Username can only be alphanumeric\n-Usename must be atleast 5 charactera\n-username cannot contain spaces");
                 return false;
             }
-
+            
             if (!passregex.test(pass.value)) {
+                console.log(8);
                 alert("Password is NOT valid.");
                 return false;
             }
             return true;
         }
-
+        
         //-----------------------------------RAGISTER USER TO FIREBASE-----------------------------------//
-
+        console.log(9);
+        
         function RegisterUser() {
+            console.log(10);
             if (!Validation()) {
+                console.log(11);
                 return;
             };
             const dbref = ref(db);
-
+            console.log(12);
+            
             get(child(dbref, "UsersList/" + username.value)).then((snapshot) => {
+                console.log(13);
                 if (snapshot.exists()) {
                     alert("Account Already Exist!");
                 }
